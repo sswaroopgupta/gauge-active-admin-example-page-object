@@ -3,7 +3,7 @@ Customer sign-up
 
      |name|email               |password|
      |----|--------------------|--------|
-     |john2|john2.doe@example.com|password|
+     |john3|john3.doe@example.com|password|
 
 * Go to active admin store
 

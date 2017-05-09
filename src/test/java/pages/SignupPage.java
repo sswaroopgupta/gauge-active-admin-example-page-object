@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,20 +12,19 @@ public class SignupPage {
     public SignupPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(how = How.XPATH, xpath = "//label[text()='Username']/following-sibling::input")
+    @FindBy(how = How.NAME, name = "user[username]")
     private WebElement userName;
 
-    @FindBy(how = How.XPATH, xpath = "//label[text()='Email Address']/following-sibling::input")
+    @FindBy(how = How.NAME, name = "user[email]")
     private WebElement userEmail;
 
-    @FindBy(how = How.XPATH, xpath = "//label[text()='Password']/following-sibling::input")
+    @FindBy(how = How.NAME, name = "user[password]")
     private WebElement userPassword;
 
-    @FindBy(how = How.XPATH, xpath = "//label[text()='Confirm Password']/following-sibling::input")
+    @FindBy(how = How.NAME, name = "user[password_confirmation]")
     private WebElement confirm_password;
 
-    @FindBy(how = How.XPATH, xpath = "//input[@value='Sign up']")
+    @FindBy(how = How.NAME, name = "commit")
     private WebElement commit;
 
     public void enterCustomer(String customer) {
