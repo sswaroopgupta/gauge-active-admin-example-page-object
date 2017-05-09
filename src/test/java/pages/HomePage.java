@@ -1,16 +1,16 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import utils.driver.Driver;
 
 import java.util.List;
 
+// Uses recommendations from https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 public class HomePage {
+    private final WebDriver webDriver;
     @FindBy(how = How.LINK_TEXT, linkText = "Sign up")
     private WebElement signup;
 
@@ -26,33 +26,27 @@ public class HomePage {
     @FindBy(how = How.XPATH, xpath = "//a[text()='Administration interface']/ancestor::div")
     private WebElement authenticationBanner;
 
-    @FindBy(how = How.CLASS_NAME,className = "product")
+    @FindBy(how = How.CLASS_NAME, className = "product")
     private List<WebElement> products;
 
-    @FindBy(how = How.XPATH,xpath = "//div[@id = 'flash_notice' and text() = 'Thank you for signing up! You are now logged in.']")
+    @FindBy(how = How.XPATH, xpath = "//div[@id = 'flash_notice' and text() = 'Thank you for signing up! You are now logged in.']")
     private WebElement thankYouForSigningUp;
 
-    @FindBy(how = How.XPATH,xpath = "//div[@id = 'flash_notice' and text() = 'You have been logged out.']")
+    @FindBy(how = How.XPATH, xpath = "//div[@id = 'flash_notice' and text() = 'You have been logged out.']")
     private WebElement youHaveBeenLoggedOut;
 
     public HomePage(WebDriver webDriver) {
+        this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 
-    public void SignUp() {
+    public SignupPage signUp() {
         signup.click();
-    }
-
-    public void LogIn() {
-        login.click();
+        return new SignupPage(webDriver);
     }
 
     public void LogOut() {
         logout.click();
-    }
-
-    public void AdministratorInterface() {
-        administratorInterface.click();
     }
 
     public String getGreeting() {
@@ -67,7 +61,7 @@ public class HomePage {
         return login.isDisplayed();
     }
 
-    public int numberOfAvaialableProducts() {
+    public int numberOfAvailableProducts() {
         return products.size();
     }
 

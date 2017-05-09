@@ -1,5 +1,4 @@
 import com.thoughtworks.gauge.Step;
-import org.openqa.selenium.support.PageFactory;
 import pages.HomePage;
 import utils.driver.Driver;
 
@@ -7,7 +6,7 @@ public class Authentication {
     private HomePage homePage;
 
     public Authentication() {
-        homePage = PageFactory.initElements(Driver.webDriver, HomePage.class);
+        homePage = new HomePage(Driver.webDriver);
     }
 
     @Step("Log out the customer")

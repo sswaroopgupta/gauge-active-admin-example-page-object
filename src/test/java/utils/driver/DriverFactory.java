@@ -20,8 +20,7 @@ public class DriverFactory {
             ChromeDriverManager.getInstance().setup();
             return new ChromeDriver();
         }
-        switch (browser)
-        {
+        switch (browser) {
             case "IE":
                 InternetExplorerDriverManager.getInstance().setup();
                 return new InternetExplorerDriver();
