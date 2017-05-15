@@ -3,7 +3,7 @@ Customer Log out
 
      |name|email               |password|
      |----|--------------------|--------|
-     |jane3|jane3.doe@example.com|password|
+     |jane|jane.doe@example.com|password|
 
 * Go to active admin store
 

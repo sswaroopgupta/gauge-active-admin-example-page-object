@@ -1,10 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import utils.driver.Driver;
 
 import java.util.List;
 
@@ -34,6 +36,9 @@ public class HomePage {
 
     @FindBy(how = How.XPATH, xpath = "//div[@id = 'flash_notice' and text() = 'You have been logged out.']")
     private WebElement youHaveBeenLoggedOut;
+
+    @FindBy(how = How.XPATH, xpath = "//div[@id = 'flash_notice' and text() = 'Thank you for your purchase! We will ship it shortly!']")
+    private WebElement thankYouForYourPurchase;
 
     public HomePage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -65,11 +70,20 @@ public class HomePage {
         return products.size();
     }
 
+    public ProductPage selectProduct(String product){
+        webDriver.findElement(By.linkText(product)).click();
+        return new ProductPage(webDriver);
+    }
+
     public boolean hasThankYouMessageForSigningup() {
         return thankYouForSigningUp.isDisplayed();
     }
 
     public boolean hasYouHaveBeenLoggedOut() {
         return youHaveBeenLoggedOut.isDisplayed();
+    }
+
+    public boolean hasThankYouForYourPurchase(){
+        return thankYouForYourPurchase.isDisplayed();
     }
 }

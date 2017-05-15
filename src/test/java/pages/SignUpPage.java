@@ -47,11 +47,11 @@ public class SignUpPage {
         return new HomePage(driver);
     }
 
-    public void registerCustomerWith(String customer, String email, String password) {
+    public HomePage registerCustomerWith(String customer, String email, String password) {
         enterCustomer(customer);
         enterEmail(email);
         enterPassword(password);
         enterConfirmPassword(password);
-        submit();
+        return submit();
     }
 }

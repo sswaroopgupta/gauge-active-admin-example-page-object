@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>gauge_example</groupId>
-    <artifactId>active_admin</artifactId>
+    <artifactId>active_admin_page_object</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
