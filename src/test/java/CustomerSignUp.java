@@ -1,6 +1,6 @@
 import com.thoughtworks.gauge.Step;
 import pages.HomePage;
-import pages.SignupPage;
+import pages.SignUpPage;
 import utils.driver.Driver;
 
 import static org.hamcrest.core.Is.is;
@@ -8,12 +8,12 @@ import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class CustomerSignup {
+public class CustomerSignUp {
 
     @Step("Sign up as <customer> with email <customer@example.com> and <password>")
     public void registerCustomerWith(String customer, String email, String password) {
-        SignupPage signupPage = new HomePage(Driver.webDriver).signUp();
-        signupPage.registerCustomerWith(customer, email, password);
+        SignUpPage signUpPage = new HomePage(Driver.webDriver).signUp();
+        signUpPage.registerCustomerWith(customer, email, password);
     }
 
     @Step("Show the log in status for user <customer>")

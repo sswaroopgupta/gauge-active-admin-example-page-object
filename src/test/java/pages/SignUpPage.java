@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 // Uses recommendations from https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-public class SignupPage {
+public class SignUpPage {
 
     private final WebDriver driver;
     @FindBy(how = How.NAME, name = "user[username]")
@@ -21,7 +21,7 @@ public class SignupPage {
     @FindBy(how = How.NAME, name = "commit")
     private WebElement commit;
 
-    public SignupPage(WebDriver driver) {
+    public SignUpPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }

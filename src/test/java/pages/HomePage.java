@@ -40,9 +40,9 @@ public class HomePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public SignupPage signUp() {
+    public SignUpPage signUp() {
         signup.click();
-        return new SignupPage(webDriver);
+        return new SignUpPage(webDriver);
     }
 
     public void LogOut() {
